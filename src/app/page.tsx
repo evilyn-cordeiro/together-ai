@@ -1,4 +1,10 @@
+"use client";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Card from "./components/Card";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface CardData {
   icon: string;
@@ -7,6 +13,9 @@ interface CardData {
 }
 
 const GpuClustersSection: React.FC = () => {
+  const sectionRef = useRef(null);
+  const buttonRef = useRef(null);
+
   const cardData: CardData[] = [
     {
       icon: "/icon1.svg",
@@ -46,15 +55,37 @@ const GpuClustersSection: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(buttonRef.current, {
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: buttonRef.current,
+          start: "top 90%",
+          end: "top 80%",
+          scrub: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="py-16 px-8 text-center max-w-6xl mx-auto">
-      <h2 className="text-gray-900 dark:text-white mb-4 text-[40px] sm:text-[36px] md:text-[48px] lg:text-[72px] xl:text-[72px] leading-none font-light">
+    <section
+      ref={sectionRef}
+      className="py-16 px-8 text-center max-w-6xl mx-auto mt-20"
+    >
+      <h2 className="mb-4 text-[40px] sm:text-[36px] md:text-[48px] lg:text-[66px] xl:text-[66px] leading-none font-light mb-10">
         <span className="text-blue-600">Forge</span> the{" "}
         <span className="text-blue-600">AI frontier.</span>
         Train on <span className="text-blue-600">expert-built</span> GPU
         clusters.
       </h2>
-      <p className="text-[20px] sm:text-[24px] md:text-[20px] lg:text-[20px] xl:text-[26px] text-gray-600 dark:text-gray-300 mb-8 leading-[1.2] font-normal">
+      <p className="text-[20px] sm:text-[24px] md:text-[20px] lg:text-[20px] xl:text-[26px] mb-8 leading-[1.2] font-normal">
         Built by AI researchers for AI innovators, Together GPU Clusters are
         powered by NVIDIA GB200, H200, and H100 GPUs, along with the Together
         Kernel
@@ -69,11 +100,16 @@ const GpuClustersSection: React.FC = () => {
             icon={card.icon}
             title={card.title}
             description={card.description}
+            className="gpu-card"
           />
         ))}
       </div>
+
       <div className="flex justify-center">
-        <button className="bg-blue-700 text-white text-lg py-3 px-12 rounded-full flex items-center justify-center hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <button
+          ref={buttonRef}
+          className="bg-blue-500 text-white text-lg py-3 px-12 rounded-full flex items-center justify-center hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
+        >
           <a href="https://www.together.ai/gpu-clusters" target="_blank">
             Together GPU Clusters
           </a>
