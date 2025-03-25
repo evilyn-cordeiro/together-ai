@@ -1,8 +1,51 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --light-gray: #f1efed;
+  --dark-navy: #1f232e;
+  --onyx: #323745;
+  --medium-gray: #d3d1d1;
+  --light-blue: #217aff;
+  --dark-grey: #626e7f;
+  --tg-blue: #0f6fff;
+  --charcoal: #13171b;
+  --transparent: transparent;
+  --white: white;
+  --red: #f95746;
+  --light-blue-2: #d6e0ef;
+  --moon-light: #f9fafb;
+  --gray-60: #dfdddc;
+  --gray30: #edeff1;
+  --yellow: #ffca44;
+  --green: #67ce00;
+  --pill-radius: 20rem;
+  --nav-padding: 2.4rem;
+  --size: 0px;
+  --product-heading-1: 5rem;
+  --product-heading-2: 5rem;
+  --swiper-theme-color: #007aff;
+  --swiper-navigation-size: 44px;
+  --list-bg-color: #f1efed;
+  --list-text-color: inherit;
+  --list-text-color-hover: #0f6fff;
+  --current-field-text-color: #0f6fff;
+  --select-field-arrow-color: #0f6fff;
+  --border-color-active: #1f232e;
+  --border-color-hover: #0f6fff;
+  --list-item-bg-color: #d6e0ef;
+  --select-field-padding-left: 2rem;
+  --select-field-padding-right: 2rem;
+  --list-padding-top-bottom: 1.6rem;
+  --list-max-height: 30rem;
+  --list-item-padding-left: 0.8rem;
+  --list-item-padding-right: 0.8rem;
+  --list-item-min-height: 3.8rem;
+  --list-item-line-height: 3.8rem;
 }
 
 @theme inline {
