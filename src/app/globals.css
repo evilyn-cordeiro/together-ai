@@ -51,6 +51,7 @@ body {
 header {
   background: var(--bg-header);
   padding: 0.4rem;
+  border-bottom: 0.5px solid var(--charcoal);
 }
 
 .bg-custom {
