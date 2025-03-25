@@ -6,7 +6,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ icon, title, description }) => {
   return (
-    <div className="flex flex-col items-start text-left max-w-[430px]">
+    <div className="flex flex-col items-start text-left max-w-[450px]">
       <img src={icon} alt={title} className="w-16 h-16 mb-4" />
       <h3
         className="text-[28px] font-normal text-gray-900 dark:text-white mb-4 tracking-[-.02em] leading-[1.2]"
@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description }) => {
       </h3>
       <p
         className="text-lg text-gray-600 dark:text-gray-300"
-        style={{ fontSize: "18px" }}
+        style={{ fontSize: "16px", lineHeight: "1.2" }}
       >
         {description}
       </p>
