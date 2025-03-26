@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "medium-gray": "var(--medium-gray)",
         "light-gray": "var(--light-gray)",
         onyx: "var(--onyx)",
         "medium-gray": "var(--medium-gray)",

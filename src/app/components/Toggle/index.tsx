@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import { CiSun } from "react-icons/ci";
+import { IoMoonOutline } from "react-icons/io5";
 
 const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<string | null>(null);
@@ -25,7 +27,7 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <button onClick={toggleTheme}>
-      {theme === "dark" ? "Light Mode" : "Dark Mode"}
+      {theme === "dark" ? <CiSun size={30} /> : <IoMoonOutline size={25} />}
     </button>
   );
 };

@@ -47,7 +47,7 @@ const Header: React.FC = () => {
   }, [isMobile]);
 
   return (
-    <header className="bg-header fixed w-full top-0 left-0 z-10 transition-all duration-300 border-b border-gray-300">
+    <header className="bg-header fixed w-full top-0 left-0 z-10 transition-all duration-300 border-b border-dark-grey">
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4">
@@ -55,7 +55,6 @@ const Header: React.FC = () => {
               <LogoTogether />
             </Link>
           </div>
-
           <ThemeToggle />
         </div>
       </div>
