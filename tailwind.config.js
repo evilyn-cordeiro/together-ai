@@ -49,10 +49,6 @@ module.exports = {
         "product-heading-1": "var(--product-heading-1)",
         "product-heading-2": "var(--product-heading-2)",
       },
-      fontFamily: {
-        sans: ["Arial", "Helvetica", "sans-serif"],
-        mono: ["monospace"],
-      },
     },
   },
   plugins: [],

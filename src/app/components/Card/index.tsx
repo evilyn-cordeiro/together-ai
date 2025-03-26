@@ -12,7 +12,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, className }) => {
     <div
       className={`flex flex-col items-start text-left max-w-[450px] ${className}`}
     >
-      <Image src={icon} alt={title} className="mb-4" width={65} height={65} />
+      <Image src={icon} alt={title} className={"mb-4"} width={65} height={65} />
       <h3 className="text-[28px] font-normal  mb-4 tracking-[-.02em] leading-[1.2]">
         {title}
       </h3>
